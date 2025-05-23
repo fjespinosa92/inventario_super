@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario de Supermercado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Inventario de Supermercado</h1>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Agregar Nuevo Producto</h2>
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="product-name">Nombre del Producto:</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-quantity">Cantidad:</label>
+                    <input type="number" id="product-quantity" required min="1">
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Categoría:</label>
+                    <select id="product-category" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option value="Lácteos">Lácteos</option>
+                        <option value="Carnes">Carnes</option>
+                        <option value="Frutas">Frutas</option>
+                        <option value="Verduras">Verduras</option>
+                        <option value="Panadería">Panadería</option>
+                        <option value="Alacena">Alacena</option>
+                        <option value="Limpieza">Limpieza</option>
+                        <option value="Bebidas">Bebidas</option>
+                    </select>
+                </div>
+                <button type="submit">Agregar Producto</button>
+            </form>
+        </section>
+
+        <section class="inventory-display">
+            <h2>Productos en Inventario</h2>
+            <div class="table-responsive">
+                <table id="product-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <p id="empty-inventory-message" class="hidden">No hay productos en el inventario. ¡Agrega algunos!</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

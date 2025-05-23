@@ -1,0 +1,204 @@
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5; /* Gris claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4A90E2; /* Azul */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #4A90E2; /* Azul */
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    gap: 30px;
+}
+
+/* Contenedor del Formulario */
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Incluir padding en el ancho */
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+    border-color: #7ED321; /* Verde */
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #7ED321; /* Verde */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button[type="submit"]:hover {
+    background-color: #6BBF1A; /* Verde más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Tabla de Productos */
+.inventory-display {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table-responsive {
+    overflow-x: auto; /* Para tablas responsive en móviles */
+}
+
+#product-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen a la tabla */
+}
+
+#product-table th,
+#product-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+#product-table th {
+    background-color: #4A90E2; /* Azul */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#product-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternancia de colores en filas */
+}
+
+#product-table tbody tr:hover {
+    background-color: #e0e0e0; /* Gris claro en hover */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button {
+    background-color: #FF6B6B; /* Rojo */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #E25757; /* Rojo más oscuro */
+    transform: translateY(-1px);
+}
+
+.hidden {
+    display: none;
+}
+
+#empty-inventory-message {
+    text-align: center;
+    color: #888;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* Media Queries para Responsive Design */
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 2fr; /* Formulario a la izquierda, tabla a la derecha */
+    }
+
+    button[type="submit"] {
+        width: auto; /* Restablecer ancho para desktop */
+    }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-container,
+    .inventory-display {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    #product-table th,
+    #product-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .delete-button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
