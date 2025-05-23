@@ -3,61 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventario de Supermercado</title>
+    <title>Mi Lista de Compras del Hogar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Inventario de Supermercado</h1>
+        <h1>Mi Lista de Compras del Hogar</h1>
     </header>
 
     <main>
-        <section class="form-container">
-            <h2>Agregar Nuevo Producto</h2>
-            <form id="product-form">
-                <div class="form-group">
-                    <label for="product-name">Nombre del Producto:</label>
-                    <input type="text" id="product-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="product-quantity">Cantidad:</label>
-                    <input type="number" id="product-quantity" required min="1">
-                </div>
-                <div class="form-group">
-                    <label for="product-category">Categoría:</label>
-                    <select id="product-category" required>
-                        <option value="">Selecciona una categoría</option>
-                        <option value="Lácteos">Lácteos</option>
-                        <option value="Carnes">Carnes</option>
-                        <option value="Frutas">Frutas</option>
-                        <option value="Verduras">Verduras</option>
-                        <option value="Panadería">Panadería</option>
-                        <option value="Alacena">Alacena</option>
-                        <option value="Limpieza">Limpieza</option>
-                        <option value="Bebidas">Bebidas</option>
-                    </select>
-                </div>
-                <button type="submit">Agregar Producto</button>
-            </form>
-        </section>
-
         <section class="inventory-display">
-            <h2>Productos en Inventario</h2>
+            <h2>Productos Habituales del Hogar</h2>
             <div class="table-responsive">
                 <table id="product-table">
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th>Cantidad</th>
                             <th>Categoría</th>
-                            <th>Acciones</th>
+                            <th class="text-center">¿Necesito Comprar?</th>
+                            <th>Última Compra</th>
                         </tr>
                     </thead>
                     <tbody>
                         </tbody>
                 </table>
             </div>
-            <p id="empty-inventory-message" class="hidden">No hay productos en el inventario. ¡Agrega algunos!</p>
+            <p id="empty-product-message" class="hidden">No hay productos en tu lista habitual. ¡Algo salió mal!</p>
+        </section>
+
+        <section class="shopping-list-display">
+            <h2>Mi Lista de Compras Actual</h2>
+            <div class="table-responsive">
+                <table id="shopping-list-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th class="text-center">¿Ya Comprado?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <p id="empty-shopping-list-message">¡Tu lista de compras está vacía! Marca los productos que necesites.</p>
+            <button id="clear-shopping-list-btn" class="clear-button hidden">Marcar todos como comprados</button>
         </section>
     </main>
 
